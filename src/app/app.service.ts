@@ -5,7 +5,7 @@ import { map } from "rxjs/operators";
 
 @Injectable()
 export class ZyllemApiService {
-  filterBy$ = new BehaviorSubject(ArticleType.ALL);
+  private filterBy$ = new BehaviorSubject(ArticleType.ALL);
 
   setFilterBy(type: ArticleType): void {
     this.filterBy$.next(type);
