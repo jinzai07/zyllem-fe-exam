@@ -1,0 +1,21 @@
+<section class="base-article">
+  <h3>{{ article.title }}</h3>
+  <ng-container #container></ng-container>
+  <div class="text-container">
+    <span>Type: </span>
+    <span class="text">{{ article.type }}</span>
+  </div>
+  <div class="text-container">
+    <span>Author: </span>
+    <span class="text">{{ article.author }}</span>
+  </div>
+  <div class="text-container">
+    <span>Published At: </span>
+    <span class="text">{{ article.publishedAt | date }}</span>
+  </div>
+  <div class="controls">
+    <button class="button" (click)="goToExternal(article.url)">
+      Go to URL
+    </button>
+  </div>
+</section>

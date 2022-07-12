@@ -1,0 +1,32 @@
+.base-article {
+  padding: 1rem;
+  box-shadow: 3px 3px 1px 0px rgb(0 0 0 / 75%);
+  margin: 1rem;
+  max-width: 15rem;
+  border: 1px solid;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.text-container {
+  padding-top: 1rem;
+}
+
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 1rem;
+  box-shadow: 2px 2px 1px 0px rgb(0 0 0 / 75%);
+  background-color: rgba(237, 24, 70, 1);
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+}
