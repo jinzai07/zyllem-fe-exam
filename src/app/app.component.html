@@ -35,7 +35,7 @@
       </div>
       <div class="articles" *ngIf="allArticles$ | async as articles">
         <app-base-article
-          *ngFor="let article of articles;"
+          *ngFor="let article of articles"
           [article]="article"
         ></app-base-article>
       </div>
