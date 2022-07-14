@@ -20,7 +20,7 @@ import { Component, Input, ViewChild } from "@angular/core";
   styleUrls: ["./base-article.component.css"],
 })
 export class BaseArticleComponent implements AfterContentInit {
-  @Input() article: any;
+  @Input() article: FeaturedArticle | NormalArticle;
   @ViewChild("container", { read: ViewContainerRef, static: true })
   private container: ViewContainerRef;
 
@@ -38,7 +38,7 @@ export class BaseArticleComponent implements AfterContentInit {
     window.open(url, "_blank");
   }
 
-  private initDynamicComponent(article: any): void {
+  private initDynamicComponent(article: FeaturedArticle | NormalArticle): void {
     const viewContainerRef = this.container;
     if (!viewContainerRef) return;
 
@@ -48,7 +48,7 @@ export class BaseArticleComponent implements AfterContentInit {
       case this.articleType.FEATURED:
         this.generateDynamicComponent<FeaturedArticle>(
           viewContainerRef,
-          article,
+          article as FeaturedArticle,
           FeaturedArticleComponent
         );
 
@@ -57,7 +57,7 @@ export class BaseArticleComponent implements AfterContentInit {
       case this.articleType.NORMAL:
         this.generateDynamicComponent<NormalArticle>(
           viewContainerRef,
-          article,
+          article as NormalArticle,
           NormalArticleComponent
         );
 
